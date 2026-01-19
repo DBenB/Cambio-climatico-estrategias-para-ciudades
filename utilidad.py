@@ -14,9 +14,14 @@
 # ---------------------------------------------
 # Author:         Daniel Benavides
 # Created:        2026-01-19 06:46:09
-# Last Modified: 2026-01-19 07:58:27
+# Last Modified: 2026-01-19 08:51:47
 # ---------------------------------------------
 import random
+
+#
+# Definicion de las constantes globales inicializadas en valores cualesquiera
+#
+
 class Constantes:
     def __init__(self):
         self.delta = 0.1
@@ -26,6 +31,11 @@ class Constantes:
         self.alpha = 1
         self.beta = 1
         self.gamma = 1
+
+#
+# Definicion de la clase ciudad, las variables que la definen y sus métodos
+#
+
 class Ciudad:
     def __init__(self,nombre, E_i, T_i, R_i, coop):
         self.nombre = nombre
@@ -45,6 +55,12 @@ class Ciudad:
 if __name__ == "__main__":
     c = Constantes()
     n = 11
+    #
+    # Valores dummy para las 11 ciudades
+    #
     ciudades =[Ciudad(f"C{i+1}", E_i=random.uniform(30, 100), T_i=random.uniform(2, 100), R_i=random.uniform(20, 40), coop=random.uniform(0, 10)) for i in range(n)]
+    #
+    # Calculo e impresion de la funcion de utilidad
+    #
     for _ in ciudades:
         print(f"Utilidad de {_.nombre}:{_.utilidad(c)}")
