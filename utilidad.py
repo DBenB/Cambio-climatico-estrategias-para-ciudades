@@ -14,7 +14,7 @@
 # ---------------------------------------------
 # Author:         Daniel Benavides
 # Created:        2026-01-19 06:46:09
-# Last Modified: 2026-01-19 07:42:31
+# Last Modified: 2026-01-19 07:58:27
 # ---------------------------------------------
 import random
 class Constantes:
@@ -45,6 +45,6 @@ class Ciudad:
 if __name__ == "__main__":
     c = Constantes()
     n = 11
-    ciudades =[Ciudad(f"C {i+1}", E_i=random.uniform(30, 100), T_i=random.uniform(2, 100), R_i=random.uniform(20, 40), coop=random.uniform(0, 10)) for i in range(n)]
+    ciudades =[Ciudad(f"C{i+1}", E_i=random.uniform(30, 100), T_i=random.uniform(2, 100), R_i=random.uniform(20, 40), coop=random.uniform(0, 10)) for i in range(n)]
     for _ in ciudades:
         print(f"Utilidad de {_.nombre}:{_.utilidad(c)}")
